@@ -6,7 +6,6 @@ Looked through some diverse learning materials online, bringing together their c
  hackonngbcarousel: https://davidschutze.github.io/HackOnNgBootstrap/index.html
  angular 8 jwt authentication: jasonwatsonblog
  thinkster.io
-reusable reactive subforms
-mat-card with expansible panel
+reusable reactive subforms- CoryRylan
+mat-card with expansible panel. flex-layout for responsive screen display
 mat-toolbar with collapsible sidenav implementing row and column positions for bigger screen and mobile and collapsible Ngb-carousel for admin pages
-flex-layout for responsive screen display
