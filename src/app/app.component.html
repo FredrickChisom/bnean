@@ -1,0 +1,184 @@
+<!-- flex wrapper
+-->
+<app-flex-layout>
+
+  <!-- sidenav navigation with angular material
+  -->
+
+  <mat-sidenav-container fxFlexFill class="sidenav-container">
+    <mat-sidenav class="sidenav" role="navigation" autofocus="false" color="accent" fxLayout
+      [mode]="isBiggerScreen ? 'over' : 'side'" [opened]="false" [fixedInViewport]="isBiggerScreen" fixedTopGap="67px">
+
+      <mat-toolbar (tap)="sidenav.toggle()" class="s-mat-toolbar" color="accent">
+
+        <mat-toolbar-row>
+          <a class="s-home-button" routerLink="/home">
+            <!-- add image
+                  <img class="bnean-logo" src="assets/favicon.ico" alt=""> -->
+            <h2 class="sidenav header">Angular sidenav and carousel example</h2>
+          </a>
+        </mat-toolbar-row>
+
+      </mat-toolbar>
+
+      <mat-nav-list>
+
+        <!-- implementing a flex Fxlayout="column" for mobile-->
+        <section fxShow fxHide.gt-xs>
+
+          <mat-list-item (tap)="sidenav.toggle()" class="navigation-list" fxflex>
+
+            <div fxLayout="column" fxFlex fxLayoutGap="20px" fxLayoutAlign="end" class="navigation-list">
+
+              <mat-list-item class="navigation-item" routerLink="/home" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <mat-icon matListIcon class="nav-list-icon">home</mat-icon>
+                <a matLine class="navigation-item-label">home</a>
+              </mat-list-item>
+
+              <mat-divider class="sidenav-divider"></mat-divider>
+
+              <mat-list-item>
+                <a class="navigation-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                  routerLink="/admin"></a>
+                <mat-icon matListIcon class="nav-list-icon">how_to_reg</mat-icon>
+                <a matLine class="navigation-item-label">admin</a>
+              </mat-list-item>
+
+              <mat-list-item class="navigation-item" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" routerLink="/join">
+                <mat-icon matListIcon class="nav-list-icon">add_comment</mat-icon>
+                <a matLine class="navigation-item-label">join</a>
+              </mat-list-item>
+            </div>
+            <hr />
+            <mat-divider></mat-divider>
+            <button type="cancel" mat-raised-button>
+              cancel
+            </button>
+          </mat-list-item>
+
+        </section>
+
+        <!-- implementing a flex Fxlayout="row" for Bigger Screens-->
+        <section fxflex fxHide fxShow.gt-xs>
+          <mat-list-item (tap)="sidenav.toggle()" class="navigation-list">
+            <hr>
+            <mat-divider></mat-divider>
+            <button type="cancel" mat-raised-button>
+              cancel
+            </button>
+
+            <div fxLayout="row" fxFlex fxLayoutGap="20px" fxLayoutAlign="end" class="navigation-list">
+
+              <mat-list-item>
+                <a class="navigation-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                  routerLink="/"></a>
+                <mat-icon matListIcon class="nav-list-icon"></mat-icon>
+                <a matLine class="navigation-item-label">home</a>
+              </mat-list-item>
+
+              <mat-divider class="sidenav-divider"></mat-divider>
+
+              <mat-list-item>
+                <a class="navigation-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                  routerLink="/admin"></a>
+                <mat-icon matListIcon class="nav-list-icon"></mat-icon>
+                <a matLine class="navigation-item-label">admin</a>
+              </mat-list-item>
+
+              <mat-list-item>
+                <a class="navigation-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                  routerLink="/join"></a>
+                <mat-icon matListIcon class="nav-list-icon">how_to_reg</mat-icon>
+                <a matLine class="navigation-item-label">join</a>
+              </mat-list-item>
+            </div>
+          </mat-list-item>
+        </section>
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+
+    <mat-sidenav-content class="sidenav-content" role="main" fxFlexFill>
+
+
+      <mat-toolbar color="accent" class="sidenav-content-toolbar">
+
+        <mat-toolbar-row>
+          <button mat-icon-button type="button" arial-label="toogle sidenav" class="menu-button"
+            (tap)="sidenav.toggle()">
+            <mat-icon matListIcon class="nav-list-icon">dashboard</mat-icon>
+            <i matListIcon class="nav-list-icon">menu</i>
+          </button>
+          <br>
+          <br>
+
+          <a fxflex fxHide fxShow.gt-xs class="home-button" routerLink="/">
+            <span>
+              <!-- add image
+                  <img class="bnean-logo" src="assets/favicon.ico" alt=""> -->
+              <h2 class="header">Angular sidenav and carousel example</h2>
+            </span>
+          </a>
+
+          <span fxFlex fxShow fxHide.gt-xs class="central-stretchable-space"></span>
+
+          <ul fxLayout fxFlex fxLayoutGap="20px" fxLayoutAlign="end" class="navigation-list">
+
+            <li fxHide.xs>
+              <a class="navigation-item" mat-list-item routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" routerLink="/home">
+                <mat-icon matListIcon class="nav-list-icon">account_circle</mat-icon>
+                <span class="navigation-item-label">home</span>
+              </a>
+            </li>
+            <li fxHide.xs>
+              <a class="navigation-item" mat-list-item routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" routerLink="/signup">
+                <mat-icon matListIcon class="nav-list-icon">account_circle</mat-icon>
+                <span class="navigation-item-label">admin</span>
+              </a>
+            </li>
+            <li fxHide.xs>
+              <a class="navigation-item" mat-list-item routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" routerLink="/join">
+                <mat-icon matListIcon class="nav-list-icon">dashboard</mat-icon>
+                <span class="navigation-item-label">join</span>
+              </a>
+            </li>
+            <li fxHide.xs>
+              <a class="navigation-item" mat-list-item routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" routerLink="/login">
+                <mat-icon matListIcon class="nav-list-icon">dashboard</mat-icon>
+                <span class="navigation-item-label">login</span>
+              </a>
+            </li>
+            <li>
+              <button mat-icon-button [matMenuTriggerFor]="currentUser">
+                <mat-icon>person_outline</mat-icon>
+              </button>
+              <mat-menu #currentUser="matMenu">
+                <button mat-menu-item (click)="logout()">
+                  <mat-icon>exit_to_app</mat-icon>
+                  <span>Sign out</span>
+                </button>
+              </mat-menu>
+            </li>
+          </ul>
+        </mat-toolbar-row>
+
+      </mat-toolbar>
+
+      <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
+      </main>
+      <!--footer-->
+      <app-footer></app-footer>
+
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- flex wrapper close -->
+</app-flex-layout>

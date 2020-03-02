@@ -1,0 +1,106 @@
+$baseHue: 215;
+$baseSat: 50%;
+$baseLum: 90;
+$baseColor: hsl($baseHue, $baseSat, $baseLum);
+$bgColor: hsl($baseHue, $baseSat, $baseLum - 2);
+
+mat-toolbar {
+	border-radius: 4px;
+	border-bottom: 5px solid rgb(80, 14, 3);
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background: inherit;
+	overflow: clip;
+	padding: 0;
+	font-weight: 600;
+	text-shadow: 2px 3px 5px #f60303, 4px 6px 5px rgb(80, 14, 3);
+}
+.central-stretchable-space {
+	flex: 1 1 auto;
+}
+a {
+	text-decoration: none;
+	color: #fcedd8;
+	position: relative;
+	padding-top: 7px;
+	padding-right: 20px;
+    padding-bottom: 10px;
+}
+a:hover,
+a:active {
+	color: #fcedd8;
+	opacity: 0.8;
+}
+.navigation-list a:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 16px;
+	height: 1px;
+	width: 0;
+	transition: 0.3s;
+	background: rgb(80, 14, 3);
+}
+.navigation-list a:hover:after {
+	width: 33.333%;
+}
+.navigation-list a:active:after {
+	background: rgb(80, 14, 3);
+}
+
+.navigation-list a {
+	text-decoration: none;
+	color: #fcedd8;
+	display: inline-block;
+	position: relative;
+	font-size: 0.8rem;
+	list-style-type: none;
+}
+.navigation-list li {
+	list-style-type: none;
+	padding: 8px 10px;
+}
+.bnean-logo {
+	padding-left: 6px;
+	text-shadow: 2px 3px 5px #f60303, 4px 6px 5px rgb(80, 14, 3);
+	border-color: rgb(80, 14, 3);
+	color: #fff;
+	background: inherit;
+	display: block;
+	outline: none;
+}
+.menu-button {
+	display: inline-block;
+	padding-left: 6px;
+	color: #fff;
+	background: inherit;
+	outline: none;
+}
+.navigation-divider {
+	color: #dcf0fb;
+	border-color: rgb(80, 14, 3);
+}
+.navigation-item .nav-list-icon {
+	margin-right: 5px;
+}
+mat-sidenav {
+	width: 100%;
+	height: 300px;
+	margin-bottom: auto;
+	overflow: auto;
+	background: rgba(0, 0, 0, 0.2);
+	text-shadow: 2px 3px 5px #f60303, 4px 6px 5px rgb(80, 14, 3);
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(245, 63, 63, 0.14),
+		0px 1px 10px 0px rgba(255, 4, 4, 0.12);
+}
+mat-sidenav-container {
+	height: 100%;
+	position: absolute;
+}
+.home-button {
+	width: 100%;
+	padding-top: 10px;
+	margin-bottom: auto;
+	display: inline-block;
+}

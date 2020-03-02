@@ -1,0 +1,44 @@
+<!-- subform: login detail
+implemented in sign-in form-->
+
+<div [formGroup]="login" fxFlexFill>
+    <table class="login-details" cellspacing="0">
+        <tr>
+            <td>
+                <div>
+                    <mat-hint class="invalid-feedback">
+                        <mat-error *ngIf="usernameControl.errors?.required">
+                            Please enter your username
+                        </mat-error>
+                        <mat-error *ngIf="usernameControl.errors?.minlength">
+                            Your username must be longer than two characters
+                        </mat-error>
+                    </mat-hint>
+                    <hr>
+                    <mat-form-field>
+                        <input formControlName="username" type="text" id="username" matInput
+                            placeholder="Your username is (required)"
+                            [ngClass]="{'is-invalid': (usernameControl.touched || usernameControl.dirty) && !usernameControl.valid}">
+
+                    </mat-form-field>
+
+                    <mat-hint class="invalid-feedback">
+                        <mat-error *ngIf="passwordControl.errors?.required">
+                            password is required
+                        </mat-error>
+                        <mat-error *ngIf="passwordControl.errors?.minlength">
+                            password is required
+                        </mat-error>
+                    </mat-hint>
+                    <hr>
+                    <mat-form-field>
+                        <input class="form-control" id="password" matInput type="password"
+                            placeholder="type your password (required)" formControlName="password"
+                            [ngClass]="{'is-invalid': (passwordControl.touched || passwordControl.dirty) && !passwordControl.valid}">
+                    </mat-form-field>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

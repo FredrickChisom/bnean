@@ -1,0 +1,114 @@
+<!-- subform: profile form
+implemented in sign-up-->
+
+<div [formGroup]="profileForm" fxFlexFill>
+    <table class="profile-form" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field>
+
+                    <mat-hint class="invalid-feedback">
+                        <mat-error *ngIf="firstNameControl.errors?.required">
+                            Please enter your first name
+                        </mat-error>
+                        <mat-error *ngIf="firstNameControl.errors?.minlength">
+                            Your first name must be longer than one character
+                        </mat-error>
+                    </mat-hint>
+                    <br>
+                    <div class="container">
+                        <label for="first-name">First Name</label>
+                        <input formControlName="firstName" id="first-name" class="form-control" matInput
+                            id="firstNameId" type="text" placeholder="Your first name (required)"
+                            [ngClass]="{'is-invalid': (firstNameControltouched || firstNameControl.dirty) && !firstNameControl.valid}" />
+                    </div>
+                </mat-form-field>
+            </td>
+
+            <td></td>
+
+            <td>
+                <mat-form-field>
+                    <mat-hint class="invalid-feedback">
+                        <mat-error *ngIf="lastNameControl.errors?.required">
+                            Please enter your last name
+                        </mat-error>
+                        <mat-error *ngIf="lastNameControl.errors?.minlength">
+                            Your last name must be more than one character
+                        </mat-error>
+                    </mat-hint>
+                    <br>
+                    <div class="container">
+                        <label for="last-name">Last Name</label>
+                        <input formControlName="lastName" id="last-name" class="form-control" matInput type="text"
+                            placeholder="Your last name (required)"
+                            [ngClass]="{'is-invalid': (lastNameControl.touched || lastNameControl.dirty) && !lastNameControl.valid}">/>
+                    </div>
+                </mat-form-field>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <table class="profile-form" cellspacing="0">
+
+        <tr>
+            <td>
+                <div>
+                    <mat-hint class="invalid-feedback">
+                        <mat-error *ngIf="emailControl.errors?.required">
+                            Please enter your email
+                        </mat-error>
+                        <mat-error *ngIf="emailControl.errors?.minlength">
+                            Your email must be longer than two characters
+                        </mat-error>
+                    </mat-hint>
+                    <br>
+                    <mat-form-field>
+                        <label for="email">Email</label>
+                        <input formControlName="email" type="email" id="email" placeholder="Your email is (required)"
+                            [ngClass]="{'is-invalid': (emailControl.touched || emailControl.dirty) && !emailControl.valid}">
+
+                    </mat-form-field>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<!--
+                    <mat-input-container>
+                         <input class="form-control" maInput id="emailId" type="email"
+                              placeholder="Your email is (required)" formControlName="email"
+                              [ngClass]="{'is-invalid': (emailControl.touched || emailControl.dirty) && !emailControl.valid}">
+                         <mat-hint class="invalid-feedback" position="end">
+                              <mat-error *ngIf="emailControl.errors?.required">
+                                   email is required
+                              </mat-error>
+                              <mat-error *ngIf="emailControl.errors?.minlength">
+                                   Please enter a valid email
+                              </mat-error>
+                         </mat-hint>
+                         <div *ngIf="emailControl.touched && emailControl.hasError('required')"
+             class="error">
+             please enter a valid email address
+        </div>
+                    </mat-input-container>
+
+               </td>
+          </tr>
+     </table>
+
+     <div>
+          <input class="form-control" id="messageId" type="text" style='height: 100px'
+               placeholder="Your message (required)" formControlName="message"
+               [ngClass]="{'is-invalid': (messageControltouched || messageControl.dirty) && !messageControl.valid}">
+          <mat-hint class="invalid-feedback">
+               <mat-error *ngIf="messageControl.errors?.minlength">
+                    must be longer than 10 characters
+               </mat-error>
+          </mat-hint>
+     </div>
+</div>-->

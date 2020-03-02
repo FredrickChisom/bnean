@@ -1,0 +1,1 @@
+﻿export * from './card-description-deck.component';

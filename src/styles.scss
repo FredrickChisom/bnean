@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '~material-design-icons/iconfont/material-icons.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.carousel-item {
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: -1;
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        display: flex !important;
+        position: absolute;
+    }
+}
+.carousel-item.active {
+    opacity: 1;
+    transition: opacity 2s;
+    z-index: 100;
+}
+.carousel-item .inactiveImage {
+    display: none;
+}
+
+.slide-indicator .largeImage {
+    display: none;
+}
+.main {
+background: #fff;
+top: 120px;
+}
+html, body {
+    height: 100%; 
+    }
+body { margin: 0; 
+     padding: 5px;
+     background: #fff;
+
+    a { cursor: pointer }
+       font-family: Roboto, "Helvetica Neue", sans-serif; }
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid bisque;
+}

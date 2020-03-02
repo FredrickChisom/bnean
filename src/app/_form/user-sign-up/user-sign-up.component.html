@@ -1,0 +1,36 @@
+<!-- implementing reusable subforms with sign-up
+ as the parent container -->
+
+<section class="container" fxLayout="column-wrap" fxLayoutAlign="center">
+
+    <mat-card class="card-container" fxFlexFill>
+        <form [formGroup]="signupForm" (ngSubmit)="submit()">
+            <mat-card-title class="card-header">Register with us</mat-card-title>
+            <mat-card-content class="card-body">
+                <!-- app-profile is a component in subforms -->
+                <app-profile formControlName="profile"></app-profile>
+                <!-- app-password is a component in subforms -->
+                <app-password formControlName="password"></app-password>
+            </mat-card-content>
+            <mat-card-actions fxLayoutAlign="center">
+                <p><span>By clicking Agree & Continue, you agree to
+                        <strong>Bnean</strong>
+                        <a href="/">Terms & Conditions</a>
+                        <a href="/">Privacy Policy</a>
+                    </span>
+                    <br>
+                    <button>Sign Up</button>
+                    <button type="button" (click)="resetForm()">Reset</button>
+            </mat-card-actions>
+        </form>
+
+        <p>
+            Form is {{signupForm.valid ? 'Valid' : 'Invalid'}}
+        </p>
+
+        <pre>
+{{signupForm.value | json}}
+</pre>
+    </mat-card>
+
+</section>

@@ -1,0 +1,121 @@
+$dark-gray: rgb(60, 60, 60);
+$darker-gray: rgb(20, 20, 20);
+$light-gray: rgb(130,130,130);
+$border-radius: 8px;
+$transition-speed: .6s;
+
+.mainImage {
+  padding: 0;
+  border-bottom-left-radius: $border-radius;
+  @media (min-width: 768px) {
+    overflow: hidden;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.indicator-wrapper {
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    flex-flow: column-reverse;
+    border-bottom-right-radius: $border-radius;
+
+  }
+
+  .slide-indicator {
+    flex-grow: 1;
+    transition: opacity, ($transition-speed /2);
+
+    &:hover {
+      opacity: .8;
+      transition: opacity, $transition-speed;
+    }
+  }
+
+  &:hover {
+    .control {
+      opacity: 1;
+      transition: opacity $transition-speed;
+    }
+  }
+
+  .control {
+    display: flex;
+    margin: 3px 0;
+    flex-direction: column;
+    align-self: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity $transition-speed;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+    .control-icon {
+      width: 30px;
+      height: 30px;
+      border: rgb(110, 110, 110) 1px solid;
+      border-radius: 50%;
+      background-color: $darker-gray;
+      position: relative;
+      opacity: 1;
+      transition: opacity, background-color, $transition-speed;
+      &:hover {
+        background-color: $dark-gray;
+        transition: background-color, $transition-speed;
+
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        background-color: $light-gray;
+        width: 10px;
+        height: 4px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-5px);
+      }
+      &:after {
+        content: '';
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-9px);
+      }
+    }
+  }
+
+  .control-prev {
+    top: 0;
+    .control-prev-icon {
+      &:before {
+        top: 16px;
+      }
+      &:after {
+        border-bottom: 11px solid $light-gray;
+        top: 5px;
+      }
+    }
+  }
+
+  .control-next {
+    bottom: 0;
+    .control-next-icon {
+      &:before {
+        bottom: 16px;
+      }
+      &:after {
+        border-top: 11px solid $light-gray;
+        bottom: 5px;
+      }
+    }
+
+  }
+}

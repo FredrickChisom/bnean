@@ -1,0 +1,16 @@
+<!-- Carousel reference from DavidSchulke-HackonNgbCarousel
+-->
+
+<ngb-carousel-modified fxFlex fxFlexFill class="mat-elevation-z6">
+    <ng-template ngbSlide *ngFor="let slide of slides; trackBy: trackByFn" let-active="active" let-id="id">
+        <img [src]="slide.mainImage" alt="Random first slide" class="largeImage">
+        <img [src]="slide.smallImage" alt="Random first slide" class="smallImage" [class.inactiveImage]="active !== id"
+            *ngIf="active !== id">
+        <div class="carousel-caption" *ngIf="active === id">
+            <div class="caption-content">
+                <h3>{{slide.title}}</h3>
+                <p>{{slide.subtitle}}</p>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel-modified>
